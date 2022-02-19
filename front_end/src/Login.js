@@ -24,11 +24,11 @@ function Login() {
             <form onSubmit={handleSubmit}>
               <div className="input">
                 <label> User Name: </label>
-                <input type="text" value={userName} onChange={(e)=> setUserName(e.target.value)} placeholder='User Name' />
+                <input type="text" name="username" value={userName} onChange={(e)=> setUserName(e.target.value)} placeholder='User Name' />
               </div>
               <div className="input">
                 <label> Password: </label>
-                <input type="password" value={password} onChange={(e)=> setPassWord(e.target.value)} placeholder='Password'/>
+                <input type="password" value={password} name="password" onChange={(e)=> setPassWord(e.target.value)} placeholder='Password'/>
               </div>
               <button type="submit" className='btn btn-signIn'>Sign In</button>
             </form>
