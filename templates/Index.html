@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script defer src="../static/script.js"></script>
 </head>
 <body>
-    Home Page
+    <div class="login_container">
+        <div class="flex_container">
+          <div class="form_wrapper">
+            <div>
+              <h2 class='bold'>Sign In</h2>
+               <form >
+                <div class="input">
+                  <label> User Name: </label>
+                  <input type="text" placeholder='User Name' />
+                </div>
+                <div class="input">
+                  <label> Password: </label>
+                  <input type="password" placeholder='Password'/>
+                </div>
+                <button type="submit"  class='btn btn-signIn'>Sign In</button>
+               </form>
+            <!-- <p class='warning_message'>Please try again!!!</p>  -->
+            </div>
+          </div>
+          <div class='signUp_container'>
+            <div>
+              <h2 class='bold'>Welcome to login</h2>
+              <p>Don't have an account?</p>
+              <a href="./register.html" class='btn btn-signUp'>Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
