@@ -154,6 +154,10 @@ nav{
   align-items: center;
   align-content: center;
   width: 100%;
+  position: sticky;
+  top:0;
+  z-index: 2;
+  background-color: white;
 }
 
 .logo_container{
@@ -287,7 +291,7 @@ nav{
   font-size: 4rem;
 }
 
-.products{
+.products,.user_products{
   padding-top: 3rem;
   display:grid;
   grid-template-columns: repeat(3,1fr);
@@ -315,11 +319,38 @@ nav{
   margin: auto;
 }
 
-.btn_cart{
+.btn_product{
   color:white;
   display: inline-block;
   background-color: rgb(233,103,104);
   padding: 1rem 2rem;
   border-radius: 27px;
 
+}
+/* user */
+.user-container{
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 3rem;
+}
+
+.sellForm-wrapper{
+  width:30%;
+  margin: auto;
+}
+
+
+.file input{
+  background-color: white;
+}
+
+.edit,.delete{
+  color:white;
+  display: inline-block;
+  background-color: rgb(233,103,104);
+  padding: 1rem 2rem;
+  border-radius: 27px;
+  font-size: 1.6rem;
 }
