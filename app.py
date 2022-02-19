@@ -12,7 +12,7 @@ app.secret_key = "Not defined yet"
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'May#2002' # os.environ.get('password') Environment variable for password not set yet
+app.config['MYSQL_PASSWORD'] = 'your password' # os.environ.get('password') Environment variable for password not set yet
 app.config['MYSQL_DB'] = 'userlogin'
 
 mysql = MySQL(app)
