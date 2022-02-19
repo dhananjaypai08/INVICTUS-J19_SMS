@@ -5,7 +5,6 @@ function Login() {
   const [userName,setUserName] = useState('');
   const [password,setPassWord] = useState('');
   // const [email,setEmail] = useState('');
-
   const handleSubmit = (e) =>{
     e.preventDefault();
     if(userName && password) {
@@ -20,7 +19,7 @@ function Login() {
 
         <div className="form_wrapper">
           <div>
-            <h2 className='bold'>Login</h2>
+            <h2 className='bold'>Sign In</h2>
             <form onSubmit={handleSubmit}>
               <div className="input">
                 <label> User Name: </label>
@@ -32,11 +31,11 @@ function Login() {
               </div>
               <button type="submit" className='btn btn-signIn'>Sign In</button>
             </form>
+            {/* <p className='warning_message'>Please try again!!!</p> */}
           </div>
         </div>
         <div className='signUp_container'>
           <div>
-
             <h2 className='bold'>Welcome to login</h2>
             <p>Don't have an account?</p>
             <a href="./" className='btn btn-signUp'>Sign Up</a>

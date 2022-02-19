@@ -15,7 +15,6 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-
   font-size: 1.6rem;
   font-weight: 300;
 }
@@ -58,12 +57,15 @@ ul {
 
 .flex_container{
   display: flex;
-  height: 60%;
+  min-height: 65%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .form_wrapper{
-  padding: 4.5rem 9rem 4.5rem 6rem;
+  padding: 7rem 9rem 4rem 6rem;
+}
+.signUp_wrapper{
+  padding: 3rem 9rem 2rem 5.5rem;
 }
 
 .signUp_container{
@@ -122,14 +124,28 @@ label {
   font-family:'Poppins', sans-serif ;
 }
 
-label:active {
-  outline: none;
-}
-
 .input input {
   width: 120%;
   padding: 1.25rem 1.75rem;
   background-color: #e3e3e3;
   border: none;
   border-radius: 27px;
+}
+
+.warning_message{
+  color:red;
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* nav */
+nav{
+  display:flex;
+
+}
+
+.icon_container ul {
+  display: flex;
 }
