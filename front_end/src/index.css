@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300;500;600&family=Roboto:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px red solid; */
+}
+
+/* General Styling */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.bold{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+}
+
+/* Login */
+.login_container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.flex_container{
+  display: flex;
+  min-height: 65%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form_wrapper{
+  padding: 7rem 9rem 4rem 6rem;
+}
+.signUp_wrapper{
+  padding: 3rem 9rem 2rem 5.5rem;
+}
+
+.signUp_container{
+  padding: 5rem;
+  background: rgb(233,103,104);
+  background: linear-gradient(90deg, rgba(233,103,104,1) 0%, rgba(202,100,127,1) 60%);
+  color:white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.btn-signIn {
+  display: block;
+  width: 120%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 27px;
+  color: #f5f5f5;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  background: rgb(233,103,104);
+  background: linear-gradient(90deg, rgba(233,103,104,1) 0%, rgba(202,100,127,1) 60%);  
+  margin-top: 2rem;
+}
+
+.btn-signIn:hover {
+  cursor: pointer;
+}
+
+.btn-signUp{
+  color:white;
+  border: white 1px solid;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 27px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-family:'Poppins', sans-serif ;
+}
+
+.input input {
+  width: 120%;
+  padding: 1.25rem 1.75rem;
+  background-color: #e3e3e3;
+  border: none;
+  border-radius: 27px;
+}
+
+.warning_message{
+  color:red;
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* nav */
+nav{
+  display:flex;
+
+}
+
+.icon_container ul {
+  display: flex;
+}
