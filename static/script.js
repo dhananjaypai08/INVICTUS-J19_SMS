@@ -1,4 +1,3 @@
-
 const products = document.querySelector('.products');
 const searchBar = document.querySelector('.search-bar');
 const btnEdit = document.querySelector('.edit');
@@ -18,10 +17,12 @@ const printBooks = function (books){
   const html = books
     .map((book) => {
       return `<div class="product">
-      <img src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
-      <h3>Macbook</h3>
-      <h6>$9999</h6>
-      <a href="" class='btn_cart'>Add to Cart</a>
+      <img src=${book.imglink} alt="" />
+      <h3>${book.bookname}</h3>
+      <p>${book.description}</p>
+      <p>Usage : ${book.usage}</p>
+      <h6>$${book.bookprice}</h6>
+      <a href="" class='btn_product'>Buy</a>
     </div>`;
     })
     .join("");
@@ -29,6 +30,7 @@ const printBooks = function (books){
 }
 
 // searchBar.addEventListener('keyup',(e)=>{
+    // e.preventDefault();;
 //   const searcString = e.target.value;
 //   books.filter(book=> book.title.contain(searcString))
 // });

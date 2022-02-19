@@ -154,6 +154,10 @@ nav{
   align-items: center;
   align-content: center;
   width: 100%;
+  position: sticky;
+  top:0;
+  z-index: 2;
+  background-color: white;
 }
 
 .logo_container{
@@ -315,7 +319,7 @@ nav{
   margin: auto;
 }
 
-.btn_cart,{
+.btn_product{
   color:white;
   display: inline-block;
   background-color: rgb(233,103,104);
