@@ -12,39 +12,31 @@
   <div class="user-container">
     <h2>Sell your book</h2>
     <div class="sellForm-wrapper">
-
-      <form >
-        <div class="input">
+      <h3>{{msg}}</h3>
+      <form method='POST' action='/sell'>
+        <div class="input" >
           <label> Book Title: </label>
-          <input type="text" class="book_title" placeholder='Book Title' />
+          <input type="text" class="book_title" placeholder='Book Title' name="bookname" />
         </div>
         <div class="input">
           <label> Price: </label>
-          <input type="password" class="price" placeholder='Price'/>
+          <input type="text" class="price" placeholder='Price' name="bookprice"/>
         </div>
         <div class="input">
           <label> description: </label>
-          <textarea name="" id="" class="description" cols="60" rows="5"></textarea>
+          <textarea id="description" class="description" cols="60" rows="5" name="description"></textarea>
+        </div>
+        <div class="input">
+          <label> Usage: </label>
+          <input type="text" class="usage" placeholder='Usage' name="usage"/>
         </div>
         <div class="input file">
           <label> image: </label>
-          <input type="file" />
+          <input type="file" name="imglink"/>
         </div>
         <button type="submit"  class='btn btn-signIn'>Submit</button>
       </form>
     </div>
-    <div class='products_container'>
-      <h2>Books pending</h2>
-      <div class="user_products">
-        <div class="product">
-          <img src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
-          <h3>Macbook</h3>
-          <h6>$9999</h6>
-          <a href="" class="edit">edit</a>
-          <a href="" class="delete">delete</a>
-        </div>
-        
-      </div>
-    </div>
+
 </body>
 </html>

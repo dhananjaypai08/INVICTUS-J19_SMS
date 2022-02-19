@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/298b2ca44e.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <nav>     
         <div class='logo_container'>       
           <h1><a href='/home' class='logo_link'>Welcome to the Supplier Management System</a></h1>
@@ -20,7 +21,7 @@
         </div>
         <div class='icon_container'>
           <ul>
-            <li><a class="link" href="./user.html"> <i class="fa-solid fa-user user-icon"></i></a></li>
+            <li><a class="link" href="/logout">Logout <i class="fa-solid fa-user user-icon"></i></a></li>
   
           </ul>
         </div>
@@ -28,26 +29,28 @@
       <div class='showcase'>
         <div class="showcase_container">
           <div class="showcase_content">
-            <h2 class='showcase_header'>Welcome to <span>iOne</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, corrupti dolorum molestiae sint reiciendis laboriosam commodi <br></br> officiis explicabo ad cumque!</p>
-            <a href="" class='btn_shopNow'>Shop Now</a>
+            <h2 class='showcase_header'>Hi there you <span>bibliophile</span></h2>
+            <p>Books is the secret of our Energy<br></br>TechPhantoms-Creation</p>
+            <a href="/sell" class='btn_shopNow'>Sell</a>
           </div>
         </div>
       </div>
       <div class='products_container'>
-        <h2>Our Products</h2>
+        <h2>Books!</h2>
         <div class="products">
-          <div class="product">
-            <img src="https://images.unsplash.com/photo-1493020258366-be3ead1b3027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
-            <h3>Macbook</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur autem natus vero itaque minus veritatis fugiat iste architecto eveniet possimus!</p>
-            <p>Usage : New</p>
-            <h6>$9999</h6>
-            <a href="" class='btn_product'>Buy</a>
+        {% for books in book_data%}
+           <div class="product">
+            <img src="{{books['imglink']}}" alt="Cannot load image" />
+            <h3>Name: {{books['bookname']}}</h3>
+            <p>Description: {{books['description']}}</p>
+            <p>Usage : {{books['description']}}</p>
+            <h6>Price: {{books['bookprice']}}</h6>
+            <a href="/home" class='btn_product'>Buy</a>
           </div>
-          
+        {% endfor %}
 
         </div>
       </div>
+      
 </body>
 </html>
