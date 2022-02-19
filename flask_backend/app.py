@@ -35,7 +35,7 @@ def login():
                 session['username'] = user_data['username']
                 msg = "Logged in Successfully"
         return render_template('index.html',param_msg=msg)
-    return render_template('login.html')
+    return render_template('index.html',param_msg="nothing")
             
 @app.route('/logout')
 def logout():

@@ -32,6 +32,7 @@ function Login() {
               </div>
               <button type="submit" className='btn btn-signIn'>Sign In</button>
             </form>
+            <p>Message = {window.msg}</p>
           </div>
         </div>
         <div className='signUp_container'>
