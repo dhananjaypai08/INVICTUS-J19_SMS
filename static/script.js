@@ -8,9 +8,9 @@ const description = document.querySelector('description');
 const ingLink = document.querySelector('imglink');
 
 const getBooks = async function(){
-  // const res = await books;
-  // const books = await res.json();
-  //  printBooks(getBooks);
+   const res = await fetch('http://127.0.0.1:5000/home');
+   const books = await res.json();
+   console.log(res);
 }
 getBooks();
 
@@ -36,6 +36,7 @@ const printBooks = function (books){
 //   books.filter(book=> book.title.contain(searcString))
 // });
 
+/*
 btnEdit.addEventListener('click',(e)=>{
   e.preventDefault();
   console.log(e.target);
@@ -44,3 +45,4 @@ btnEdit.addEventListener('click',(e)=>{
   description.value = book.description;
 
 })
+*/

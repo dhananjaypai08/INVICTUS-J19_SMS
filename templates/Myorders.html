@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>MyOrders</title>
     <link rel="stylesheet" href="../static/style.css">
     <script defer src="../static/script.js"></script>
     <script src="https://kit.fontawesome.com/298b2ca44e.js" crossorigin="anonymous"></script>
@@ -38,16 +38,19 @@
       <div class='products_container'>
         <h2>Books!</h2>
         <div class="products">
-        {% for books in book_data%}
+        {% for data in myorders%}
            <div class="product">
-            <img src="{{books['imglink']}}" alt="Cannot load image" />
-            <h3>Name: {{books['bookname']}}</h3>
-            <p>Description: {{books['description']}}</p>
-            <p>Usage : {{books['description']}}</p>
-            <h6>Price: {{books['bookprice']}}</h6>
+            <img src="{{myorders['imglink']}}" alt="Cannot load image" />
+            <h3>Name: {{myorders['bookname']}}</h3>
+            <p>Description: {{myorderss['description']}}</p>
+            <p>Usage : {{myorders['description']}}</p>
+            <h6>Price: {{myorders['bookprice']}}</h6>
             <a href="/home" class='btn_product'>Buy</a>
           </div>
         {% endfor %}
-        
+
+        </div>
+      </div>
+      
 </body>
 </html>

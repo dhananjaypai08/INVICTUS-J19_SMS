@@ -4,7 +4,7 @@ import MySQLdb.cursors
 import os
 import re
 import jinja2
-import registermail
+import json
 
 app = Flask(__name__)
 
@@ -12,10 +12,13 @@ app.secret_key = "Not defined yet"
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'your password' # os.environ.get('password') Environment variable for password not set yet
+app.config['MYSQL_PASSWORD'] = 'May#2002' # os.environ.get('password') Environment variable for password not set yet
 app.config['MYSQL_DB'] = 'userlogin'
 
 mysql = MySQL(app)
+
+USERNAME = ""
+EMAIL = ""
 
 @app.route('/')
 def starter():
@@ -39,6 +42,11 @@ def login():
             elif (not user_data['password']==password):
                 msg = "Incorrect Password"
             else:
+                USERNAME = username
+                cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+                cursor.execute('SELECT email FROM useraccounts WHERE username = % s ', (username, ))
+                email = cursor.fetchone()
+                EMAIL = email
                 session['loggedin'] = True
                 session['id'] = user_data['id']
                 session['username'] = user_data['username']
@@ -87,7 +95,7 @@ def register():
                 cursor.execute('INSERT INTO useraccounts VALUES (NULL, % s, % s, % s)', (username, password, email, ))
                 mysql.connection.commit()
                 msg = 'You have successfully registered !'
-                #registermail.sendto(correct_email,correct_username)
+                
                 return redirect('/login')
     return render_template('register.html',msg=msg)
 
@@ -98,7 +106,13 @@ def home():
     user_data = cursor.fetchall()
         
     return render_template('starter.html',book_data = user_data)
-    
+
+def api_home():
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM books')
+    user_data = cursor.fetchall() 
+    print(user_data)
+    return json(user_data)
 
 @app.route('/sell', methods=['GET', 'POST'])
 def user_sell():
@@ -109,15 +123,16 @@ def user_sell():
         description = request.form.get('description')
         usage = request.form.get('usage')
         imglink = request.form.get('imglink')
-        print(bookname,bookprice,description,usage,imglink)
-        if not bookname or not bookprice or not description or not usage or not imglink:
+        if not bookname or not bookprice or not description or not usage or not imglink or not USERNAME:
             msg = "Make sure you have correctly filled the form"
         else:
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('INSERT INTO books VALUES (NULL, % s, % s, % s, % s, % s)', (bookname, bookprice, description, usage, imglink, ))
+            cursor.execute('INSERT INTO books VALUES (NULL, % s, % s, % s, % s, % s, % s)', (bookname, bookprice, description, usage, imglink, USERNAME, ))
             mysql.connection.commit()
             msg = "Book Added Successfully"
     return render_template('user.html',msg=msg)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
