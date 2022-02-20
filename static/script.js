@@ -5,6 +5,7 @@ const btnDelete = document.querySelector('.delete');
 const bookTitle = document.querySelector('.title');
 const price = document.querySelector('.price');
 const description = document.querySelector('description');
+const ingLink = document.querySelector('imglink');
 
 const getBooks = async function(){
   // const res = await books;
@@ -41,4 +42,5 @@ btnEdit.addEventListener('click',(e)=>{
   bookTitle.value = book.title;
   price.value = book.price;
   description.value = book.description;
+
 })
