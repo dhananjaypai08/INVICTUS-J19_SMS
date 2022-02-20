@@ -161,7 +161,7 @@ nav{
 }
 
 .logo_container{
-  flex-basis: 10%;
+  flex-basis: 70%;
 
 }
 
@@ -175,7 +175,7 @@ nav{
 }
 
 .icon_container{
-  flex-basis: 50%;
+  flex-basis: 30%;
   display: flex;
   justify-content: end;
 }
